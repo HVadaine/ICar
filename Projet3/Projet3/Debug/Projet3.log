@@ -1,0 +1,15 @@
+﻿cl : Ligne de commande warning D9035: l'option 'clr:pure' est déconseillée et sera supprimée dans une version ultérieure
+  serveur.cpp
+c:\users\hugo\documents\visual studio 2015\projects\projet3\projet3\libusb/libusb.h(738): warning C4200: extension non standard utilisée : tableau de taille zéro dans un struct/union
+  c:\users\hugo\documents\visual studio 2015\projects\projet3\projet3\libusb/libusb.h(738): note: Impossible de générer un constructeur de copie ou un opérateur pour l'assignation de copie lorsque UDT contient un tableau de taille zéro
+c:\users\hugo\documents\visual studio 2015\projects\projet3\projet3\libusb/libusb.h(769): warning C4200: extension non standard utilisée : tableau de taille zéro dans un struct/union
+  c:\users\hugo\documents\visual studio 2015\projects\projet3\projet3\libusb/libusb.h(769): note: Impossible de générer un constructeur de copie ou un opérateur pour l'assignation de copie lorsque UDT contient un tableau de taille zéro
+c:\users\hugo\documents\visual studio 2015\projects\projet3\projet3\libusb/libusb.h(1262): warning C4200: extension non standard utilisée : tableau de taille zéro dans un struct/union
+  c:\users\hugo\documents\visual studio 2015\projects\projet3\projet3\libusb/libusb.h(1262): note: Impossible de générer un constructeur de copie ou un opérateur pour l'assignation de copie lorsque UDT contient un tableau de taille zéro
+serveur.cpp(78): warning C4554: '&' : vérifiez la priorité des opérateurs comme cause possible d'erreur ; utilisez des parenthèses pour rendre plus claires les priorités
+serveur.cpp(114): warning C4554: '&' : vérifiez la priorité des opérateurs comme cause possible d'erreur ; utilisez des parenthèses pour rendre plus claires les priorités
+serveur.cpp(132): warning C4554: '&' : vérifiez la priorité des opérateurs comme cause possible d'erreur ; utilisez des parenthèses pour rendre plus claires les priorités
+serveur.cpp(149): warning C4554: '&' : vérifiez la priorité des opérateurs comme cause possible d'erreur ; utilisez des parenthèses pour rendre plus claires les priorités
+  serveur.obj : /DEBUG:FASTLINK n'est pas pris en charge en présence de code managé ; redémarrage de l'édition des liens avec /DEBUG:FULL
+  Projet3.vcxproj -> C:\Users\hugo\Documents\Visual Studio 2015\Projects\Projet3\Debug\Projet3.exe
+  Projet3.vcxproj -> C:\Users\hugo\Documents\Visual Studio 2015\Projects\Projet3\Debug\Projet3.pdb (Partial PDB)
