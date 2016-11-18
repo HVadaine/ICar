@@ -111,10 +111,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="InterfaceUtilisateur.cpp" />
+    <ClCompile Include="Razor.cpp" />
     <ClCompile Include="serveur.cpp" />
+    <ClCompile Include="InterfaceArduino.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="libusb\libusb.h" />
+    <ClInclude Include="InterfaceArduino.h" />
+    <ClInclude Include="InterfaceUtilisateur.h" />
+    <ClInclude Include="Razor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
