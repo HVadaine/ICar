@@ -25,6 +25,10 @@ void variateur::init()
 // Set speed for motor 2, speed is a number betwenn -400 and 400
 void variateur::commande(int value)
 {
+  if(!isInit)
+  {
+    initvar();
+  }
 	int commande=value; //asservissement(value,analogRead(Vpos)); Pas d'asservissement pour le moment : pas de retour capteur pour la vitesse
    if(commande < 0) commande=0;
    else if(commande > 155) commande = 155;//on bride le moteur pour limiter la vitesse
@@ -49,6 +53,7 @@ void variateur::lock()
 {
   digitalWrite(vacc_pin,0);
   digitalWrite(FS_pin,LOW);
+  isInit=false;
 }
 void variateur::initvar()
 {
@@ -62,5 +67,7 @@ void variateur::initvar()
     delay(5);
     digitalWrite(mass_pin,LOW);
      digitalWrite(FS_pin,LOW);
+     isInit=true;
 }
+
 

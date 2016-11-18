@@ -13,11 +13,11 @@ class direction
 	void lock();
 	void unlock();
 
-    
   private:
 	const int carte_de_puissance =10;
 	const int alim_potar=6;
 	const int retour_potar=A4;
+
 
 	int erreur_precP = 0;
 	int erreur_sommeP = 0;

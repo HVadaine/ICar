@@ -16,10 +16,10 @@ void direction::init()
 // Set speed for motor 2, speed is a number betwenn -400 and 400
 void direction::commande(int value)
 {
-	int commande=asservissement(value,analogRead(retour_potar));
-  if(commande < 65) {commande = 65;} 
-  else if(commande >245){commande =245;}
-  analogWrite(carte_de_puissance,commande);
+	int commande_asservie=asservissement(value,analogRead(retour_potar));
+  if(commande_asservie < 65) {commande_asservie = 65;} 
+  else if(commande_asservie >245){commande_asservie =245;}
+  analogWrite(carte_de_puissance,commande_asservie);
 }
 
 int direction::asservissement(int pos_consigne, int pos_reel){

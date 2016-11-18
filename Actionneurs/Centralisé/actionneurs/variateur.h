@@ -13,7 +13,6 @@ class variateur
 	int asservissement(int pos_consigne, int pos_reel);
 	void lock();
 	void initvar();
-
     
   private:
 	const int CapteurV = A0;
@@ -26,7 +25,8 @@ class variateur
 	const int mass_pin=4;
 	const int vacc_pin=6;
 	const int FS_pin=7;
-	
+
+  boolean isInit =false;
 	int erreur_precP = 0;
 	int erreur_sommeP = 0;
 	float kp = 20;           // Coefficient proportionnel
