@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="fill_parent"
+
+    android:layout_height="fill_parent" >
+
+    <TextView
+
+        android:id="@+id/premier"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:text="I-CAR : Application de contrôle à distance"
+        android:textAlignment="center"
+        android:textSize="15pt"
+        android:background="#01579b"
+        android:textColor="#ffffff"/>
+
+    <TextView
+
+        android:id="@+id/deuxieme"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:text="Fenêtre de connexion"
+        android:textAlignment="center"
+        android:layout_below="@id/premier"
+        android:textSize="15pt"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"/>
+
+
+    <TextView
+
+        android:id="@+id/quatrieme"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:text="Pret à se connecter"
+
+        android:textSize="15pt"
+
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:layout_alignParentBottom="true"
+                                                    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9FA8DA"
+        android:text="Renseignez l'ip du pc de la voiture"
+        android:id="@+id/ipHelp"
+        android:textSize="15pt"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:layout_below="@+id/deuxieme"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15pt"
+        android:layout_below="@id/ipHelp"
+        android:textAlignment="center"
+        android:id="@+id/ip"
+        android:text="192.168.0.15"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15pt"
+        android:layout_below="@id/ip"
+        android:textAlignment="center"
+        android:id="@+id/port"
+        android:text="6001"/>
+
+    <Button
+
+        android:id="@+id/buttonC"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:textSize="25pt"
+
+        android:text="Connexion"
+
+        android:layout_above="@+id/quatrieme"
+
+        android:layout_alignParentLeft="true" />
+
+</RelativeLayout>

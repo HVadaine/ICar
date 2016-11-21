@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/TextVar"
+        android:text="Controle Variateur : "
+        android:textSize="12pt"
+        android:background="#01579b"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/TextVar"
+        android:id="@+id/TextVarValue"
+        android:text="0"
+        android:textSize="12pt"
+        android:background="#01579b"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
+        android:id="@+id/Variateur"
+        android:background="#81c784"
+        android:layout_below="@+id/TextVar"
+        android:enabled="false"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Variateur"
+        android:id="@+id/Textfrein"
+        android:text="Controle frein : "
+        android:textSize="12pt"
+        android:background="#01579b"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Variateur"
+        android:layout_toRightOf="@+id/Textfrein"
+        android:id="@+id/TextFreinValue"
+        android:text="0"
+        android:textSize="12pt"
+        android:background="#01579b"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        />
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
+        android:id="@+id/frein"
+        android:background="#81c784"
+        android:layout_below="@+id/Textfrein"
+        android:enabled="false"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frein"
+        android:id="@+id/TextDir"
+        android:text="Controle Direction : "
+        android:textSize="12pt"
+        android:background="#01579b"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frein"
+        android:layout_toRightOf="@+id/TextVar"
+        android:id="@+id/TextDirValue"
+        android:text="0"
+        android:textSize="12pt"
+        android:background="#01579b"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
+        android:id="@+id/Dir"
+        android:background="#81c784"
+        android:layout_below="@+id/TextDir"
+        android:enabled="false"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:background="@color/colorPrimaryDark"
+        android:alpha="1"
+        android:id="@+id/space"
+        android:visibility="visible"
+        android:layout_below="@+id/Dir"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="STOP"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/space"
+        android:background="@android:color/holo_red_dark"
+        android:textStyle="normal|bold"
+        android:textSize="36sp"
+        android:textColor="@android:color/background_light" />
+
+</RelativeLayout>
+
