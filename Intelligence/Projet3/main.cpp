@@ -24,8 +24,21 @@ int main()
 	int sinsize = sizeof(csock_in);
 	while ((csock = accept(sock, (SOCKADDR *)&csock_in, &sinsize)) == INVALID_SOCKET)
 	{
+
+
+	}	
+	while (1)
+		{
 		recv(csock, buff, 2,0);
+		cout << buff[0];
+		cout << " ";
+		cout << buff[1];
+		cout << "\n";
+		if (buff[0] == 'S')
+		{
+			break;
+		}
 		IUA->commandeActionneur(buff[0], buff[1]);
-	}
+		}
 	return 0;
 }

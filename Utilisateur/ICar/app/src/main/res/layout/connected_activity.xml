@@ -122,7 +122,7 @@
         android:text="STOP"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/button"
+        android:id="@+id/STOP"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
