@@ -21,6 +21,8 @@ void initTimer1();
 void arret();
 
 void setup() {
+  Serial.begin(57600);
+  commande_direction=500;
    dir.init();
    var.init();
    fr.init();
@@ -38,7 +40,9 @@ void loop() {
  * puis effectue l'interpretation du message.
  */
  void serialEvent() {
+  Serial.println("event detected");
   while (Serial.available()) {
+    Serial.println("event read");
     // get the new byte:
     char inChar = (char)Serial.read();
     // add it to the inputString:
@@ -86,29 +90,40 @@ ISR(TIMER1_COMPA_vect) // fonction périodique
  */
 void parseMessage()
 {
-  
+  Serial.println(inputString);
   switch(inputString[0])
   {
         case 'D': //Commande de la direction
         dir.commande(inputString[1]);
         commande_direction=inputString[1];
+    Serial.println("direction");
     break;
         case 'F': //Commande du frein
         fr.commande(inputString[1]);
         commande_frein=inputString[1];
+    Serial.println("frein");
     break;
         case 'V': //Commande du variateur
         var.commande(inputString[1]);
         commande_variateur=inputString[1];
+    Serial.println("variateur");
     break;
         case 'S': //Commande d'arret
         arret();
+    Serial.println("arret");
     break;
-        default :
+    case 'R'://Repos on range le frein pour eviter une usure
+         fr.commande(-400);
+        commande_frein=-400;
+    Serial.println("repos");
+    break;
+    default :
         var.lock();//on met le variateur en defaut pour couper toute la puissance le plus rapidement possible
          arret();
+    Serial.println("commande inconnue");
     break;
   }
+  inputString = ""; //le message est consommé, donc detruit
 }
 
 void arret()

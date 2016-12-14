@@ -7,10 +7,9 @@
 void direction::init()
 {
 // Define pinMode for the pins and set the frequency for timer1.
-  pinMode(carte_de_puissance, OUTPUT);             // Et la sortie de la LED
-  pinMode(alim_potar,OUTPUT);
+  pinMode(carte_de_puissance, OUTPUT);  
   pinMode(retour_potar,INPUT);
-  digitalWrite(alim_potar,HIGH);
+  unlock();
 }
 
 // Set speed for motor 2, speed is a number betwenn -400 and 400
@@ -20,13 +19,17 @@ void direction::commande(int value)
   if(commande_asservie < 65) {commande_asservie = 65;} 
   else if(commande_asservie >245){commande_asservie =245;}
   analogWrite(carte_de_puissance,commande_asservie);
+    Serial.print("commande dir : ");
+  Serial.print(commande_asservie);
+  Serial.print("; Capteur pos : ");
+  Serial.println(analogRead(retour_potar));
 }
 
 int direction::asservissement(int pos_consigne, int pos_reel){
   int commande;
 
    
-  int erreur =  pos_reel- pos_consigne; // calcul de l'erreur nominale
+  int erreur =  -1*(pos_reel- pos_consigne); // calcul de l'erreur nominale
   erreur_sommeP += erreur; // calcul du retard/avance sur l'erreur (si on corrige trop ou pas assez sur le long terme
   
   int erreur_delta = erreur - erreur_precP; // calcul de la vitesse de supression de l'erreur
@@ -40,12 +43,12 @@ int direction::asservissement(int pos_consigne, int pos_reel){
 void direction::unlock()
 {
   int i=0;
-  while(i<40)
+  while(i<10)
   {
     analogWrite(carte_de_puissance,245);
-    delay(100);
+    delay(50);
     analogWrite(carte_de_puissance,65);
-    delay(100);
+    delay(50);
     i++;  
   }
 }

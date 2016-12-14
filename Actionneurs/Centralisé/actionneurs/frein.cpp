@@ -18,19 +18,22 @@ void frein::init()
 
 // Set speed for motor 2, speed is a number betwenn -400 and 400
 void frein::commande(int value)
-{
-	int commande=asservissement(value,analogRead(Vpos));
+{ //Serial.print("Value : "); Serial.print(value);
+	int commande=asservissement(value,analogRead(Vpression));
+//	Serial.print("Asservissement Frein : ");
+//	Serial.print(asservissement(value,analogRead(Vpression)));
   if (commande < -400) commande = -400; //on limite l'intervalle de commande à l'intervale supporté par la carte
   else if (commande > 400) commande = 400;
-  
   md.setM1Speed(commande);
+  /*Serial.print("; commande frein : ");
+  Serial.print(commande);
+  Serial.print("; Capteur pression : ");
+  Serial.println(analogRead(Vpression));//37 minimum, 120 max*/
 }
 
-int frein::asservissement(int pos_consigne, int pos_reel){
+int frein::asservissement(int pression_consigne, int pression_reel){
   int commande;
-
-   
-  int erreur =  pos_reel- pos_consigne; // calcul de l'erreur nominale
+  int erreur =  (pression_reel - pression_consigne)*-1; // calcul de l'erreur nominale
   erreur_sommeP += erreur; // calcul du retard/avance sur l'erreur (si on corrige trop ou pas assez sur le long terme
   
   int erreur_delta = erreur - erreur_precP; // calcul de la vitesse de supression de l'erreur

@@ -15,14 +15,14 @@ class direction
 
   private:
 	const int carte_de_puissance =10;
-	const int alim_potar=6;
 	const int retour_potar=A4;
-
 
 	int erreur_precP = 0;
 	int erreur_sommeP = 0;
-	float kp = 20;           // Coefficient proportionnel
-	float ki = 0;           // Coefficient intégrateur
+
+  //Coef de l'asservissement : améliorable (prendre en compte le coef de frottement en fonction de la vitesse) 
+	float kp = 5;           // Coefficient proportionnel
+	float ki = 0.3;           // Coefficient intégrateur
 	float kd = 0;           // Coefficient dérivateur
 };
 

@@ -11,7 +11,7 @@ class frein
     void init(); // Initialise les paramètres liés au frein
     void commande(int value); // met à jour la valeur de freinage.
 	int asservissement(int pos_consigne, int pos_reel);
-    
+
   private:
 	const int ledPin = 6;
 	const int Vpression = A5;
@@ -23,7 +23,7 @@ class frein
 
 	int erreur_precP = 0;
 	int erreur_sommeP = 0;
-	float kp = 20;           // Coefficient proportionnel
+	float kp = 25;           // Coefficient proportionnel
 	float ki = 0;           // Coefficient intégrateur
 	float kd = 0;           // Coefficient dérivateur
 };

@@ -16,14 +16,14 @@ class variateur
     
   private:
 	const int CapteurV = A0;
-	const int alim_therm=12;
+	const int alim_therm=9;//anciemment 12;
 	const int dem_therm=11;
 	const int Vitesse = 0;
 	const int embrayage_plus =8;
 	const int emb=0;
 	const int embrayage_min =3;
 	const int mass_pin=4;
-	const int vacc_pin=6;
+	const int vacc_pin=5;//anciennement6;
 	const int FS_pin=7;
 
   boolean isInit =false;
