@@ -5,24 +5,26 @@ InterfaceArduino::InterfaceArduino()
 	actionneurs = gcnew System::IO::Ports::SerialPort();
 	carteRazor = gcnew System::IO::Ports::SerialPort();
 
-	actionneurs->PortName = "COM1"; //TODO : chercher une métode pour nommer les ports de façon automatique
+	actionneurs->PortName = "COM4"; //TODO : chercher une métode pour nommer les ports de façon automatique
 	actionneurs->BaudRate = 57200;
 	actionneurs->Open();
 	
-
+	/*
 	carteRazor->PortName = "COM2";
 	carteRazor->BaudRate = 57200;
 	carteRazor->Open();
 	carteRazor->DiscardOutBuffer(); // très très important cela permet d'empecher la création d'une file d'attente dans le buffer de sortie en direction du port USB, cela évite les problèmes de désynchronisation liés à des restes dans la mémoire du pc
 	carteRazor->Write("#osct");
 	carteRazor->Write("#o0"); // on envoie à la carte RAZOR l'odre de n'emettre que sur demande (#o0) et d'envoyer toutes les données des capteurs (#osct) : pour plus d'info voir le document RAZOR_DOC.txt (ouvrez le avec notepad sinon la lecture sera difficile)
-	carteRazor->DiscardInBuffer(); // on purge les entrés pour empecher une future désyncronisation dans la lecture des donnés.
+	carteRazor->DiscardInBuffer(); // on purge les entrés pour empecher une future désyncronisation dans la lecture des donnés.*/
 }
 
 void InterfaceArduino::commandeActionneur(int header, int value)
 {
 	cout << header;
+	cout << " ";
 	cout << value;
+	cout << "\n";
 	actionneurs->Write(header.ToString());
 	actionneurs->Write(value.ToString());
 	actionneurs->Write("\n");

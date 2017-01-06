@@ -94,8 +94,9 @@ void parseMessage()
   switch(inputString[0])
   {
         case 'D': //Commande de la direction
-        dir.commande(inputString[1]);
-        commande_direction=inputString[1];
+        // mise à l'échelle pour que la commande de l'utilisateur corresponde à l'interval de commande de la carte de puissance
+        dir.commande(inputString[1]*1.7+65);
+        commande_direction=inputString[1]*1.7+65;
     Serial.println("direction");
     break;
         case 'F': //Commande du frein

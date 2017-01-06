@@ -30,10 +30,6 @@ int main()
 	while (1)
 		{
 		recv(csock, buff, 2,0);
-		cout << buff[0];
-		cout << " ";
-		cout << buff[1];
-		cout << "\n";
 		if (buff[0] == 'S')
 		{
 			break;
